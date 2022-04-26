@@ -26,9 +26,29 @@ namespace webapioperaciones
 
         public IConfiguration Configuration { get; }
 
+        readonly string MyAllowSpecificOrigins = "_myAllowSpecificOrigins";
+
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddCors(options =>
+            {
+                options.AddPolicy(name: MyAllowSpecificOrigins,
+                                  builder =>
+                                  {
+                                      builder.WithOrigins(
+                                          "http://localhost",
+                                          "https://www.kontrol-gps.com",
+                                          "https://www.bi-track.com",
+                                          "https://www.bluefenyx.com",
+                                          "https://app.powerbi.com"
+                                      )
+                                      .AllowAnyHeader()
+                                      .AllowAnyMethod();
+
+                                  });
+            });
+
             services.AddControllers();
             services.AddSwaggerGen(c =>
             {
