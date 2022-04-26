@@ -26,14 +26,14 @@ namespace webapioperaciones
 
         public IConfiguration Configuration { get; }
 
-        readonly string MyAllowSpecificOrigins = "_myAllowSpecificOrigins";
+        readonly string AllowSpecificOrigins = "_myAllowSpecificOrigins";
 
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddCors(options =>
             {
-                options.AddPolicy(name: MyAllowSpecificOrigins,
+                options.AddPolicy(name: AllowSpecificOrigins,
                                   builder =>
                                   {
                                       builder.WithOrigins(
@@ -48,6 +48,8 @@ namespace webapioperaciones
 
                                   });
             });
+
+           
 
             services.AddControllers();
             services.AddSwaggerGen(c =>
@@ -72,6 +74,8 @@ namespace webapioperaciones
             app.UseHttpsRedirection();
 
             app.UseRouting();
+
+            app.UseCors(AllowSpecificOrigins);
 
             app.UseAuthorization();
 
