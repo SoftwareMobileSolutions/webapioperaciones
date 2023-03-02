@@ -24,7 +24,7 @@ namespace webapioperaciones.Services
                 if (conn.State == ConnectionState.Closed) {
                     conn.Open();
                 }
-                data = await conn.QueryAsync<dynamic>(query, new { idoperacion, parametros }, commandType: CommandType.Text);
+                data = await conn.QueryAsync<dynamic>(query, new { idoperacion, parametros }, commandTimeout: 300, commandType: CommandType.Text);
                 if (conn.State == ConnectionState.Open) {
                     conn.Close();
                 }

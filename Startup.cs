@@ -36,13 +36,13 @@ namespace webapioperaciones
                 options.AddPolicy(name: AllowSpecificOrigins,
                                   builder =>
                                   {
-                                      builder.WithOrigins(
+                                      builder.WithOrigins(""/*
                                           "http://localhost",
                                           "https://www.kontrol-gps.com",
                                           "https://www.bi-track.com",
                                           "https://www.bluefenyx.com",
                                           "https://app.powerbi.com"
-                                      )
+                                      */)
                                       .AllowAnyHeader()
                                       .AllowAnyMethod();
 

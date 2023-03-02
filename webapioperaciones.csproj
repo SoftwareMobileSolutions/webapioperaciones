@@ -14,4 +14,41 @@
     <PackageReference Include="System.Data.SqlClient" Version="4.8.3" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Reference Include="ReferenceIO">
+      <HintPath>..\FLEETCOREMVC_LAST_2022_08_18\Libs\ReferenceIO.dll</HintPath>
+    </Reference>
+    <Reference Include="Summary">
+      <HintPath>..\FLEETCOREMVC_LAST_2022_08_18\Libs\Summary.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Composition.AttributedModel">
+      <HintPath>Libs\System.Composition.AttributedModel.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Composition.Convention">
+      <HintPath>Libs\System.Composition.Convention.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Composition.Hosting">
+      <HintPath>Libs\System.Composition.Hosting.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Composition.Runtime">
+      <HintPath>Libs\System.Composition.Runtime.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Composition.TypedParts">
+      <HintPath>Libs\System.Composition.TypedParts.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Data.Odbc">
+      <HintPath>Libs\System.Data.Odbc.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Data.SqlClient">
+      <HintPath>Libs\System.Data.SqlClient.dll</HintPath>
+    </Reference>
+    <Reference Include="System.IO.Pipelines">
+      <HintPath>Libs\System.IO.Pipelines.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Libs\" />
+  </ItemGroup>
+
 </Project>
